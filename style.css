@@ -1,0 +1,728 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --green:#27ae60;
+  --black:#1d1d30;
+  --white:#fff;
+  --grey: #666;
+  --orange: #f1a026;
+  --lightGrey: #f7f7f7;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+}
+
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6.5rem;
+    scroll-behavior: smooth;
+}
+
+
+
+/*------------------
+  	Header section
+---------------------*/
+
+a:hover {
+    color: var(--green);
+    transition: all 0.3s ease-in-out; 
+}
+  
+.navbar-section {    
+    display: flex;
+    margin: 0%;
+    padding: 0%;      
+    /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); */
+    /* background-color: var(--black); */
+}
+  
+.menu-container {
+    width: 70%;   
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons a {
+    font-size: 3rem;
+    color:var(--black);
+    padding-left: 3rem;
+    transition: all 0.3s ease-in-out;     
+}
+
+  
+.icons a:hover {
+    color:var(--green);
+    transition: all 0.3s ease-in-out;     
+}
+  
+.logo-container {
+    width: 15%;  
+    height: 8rem;
+}
+  
+.siteLogo img {
+    width: 6rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease-in-out;     
+} 
+
+.siteLogo img:hover {
+    width: 6.5rem;  
+    transition: all 0.3s ease-in-out;       
+}  
+  
+.menu-list {
+    list-style: none;
+    display: flex;   
+    align-items: center;  
+    font-size: 2.5em;
+    margin: 0%;
+    margin-top: 2%;    
+}
+  
+ .menu-items {
+    text-decoration: none;
+    color: var(--black);
+    text-transform: uppercase;
+    position: relative;
+    margin-right: 6rem;
+}
+  
+.menu-items::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.25rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--green);
+    color: var(--green);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;      
+}
+  
+.menu-items:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+  
+
+/*------------------
+  	Home section
+---------------------*/
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.cover-img img {
+    width: 100%;     
+}
+
+.cover-content {
+    display: flex;
+    /* justify-content: center; */
+    align-items: left;
+    flex-direction: column;
+    z-index: 1; 
+    position: absolute;
+    /* text-align: left; */
+    margin-left: 35%;    
+}
+
+.cover-content h3 {
+    font-size: 6rem;
+    color: var(--green);
+}
+
+
+.cover-content h2 {
+    font-size: 8rem;
+    color:var(--white);
+}
+
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background:var(--green);
+    color:var(--white);    
+    padding:.8rem 3rem;
+    font-size: 2.7rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;  
+    width: 25rem;
+}
+  
+.btn:hover {
+    transition: all 0.3s ease-in-out;  
+    background:var(--black);
+    color:var(--white);
+}
+
+
+/*------------------
+  	Product section
+---------------------*/
+
+.products-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+
+.products-card {
+    padding:1.5rem;
+    border:.1rem solid rgba(0,0,0,.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;    
+}
+
+.products-card img {
+    width: 50%;
+}
+
+.products-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin-bottom: 5rem;
+}
+
+.products-title h2 {
+    font-size: 5rem;
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    margin: 0%;
+    text-transform: uppercase;
+  }
+  
+ .products-title h2 span {   
+    color: var(--green);   
+    text-transform: uppercase;
+ }
+
+.products-card-title{
+    font-size: 3rem;
+}
+
+.products-card-price {
+    font-size: 2.5rem;
+}
+
+.products-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+}
+
+.products-input-container h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.products-inputBox{    
+    padding:1rem;
+    font-size: 1.7rem;
+    background:var(--lightGrey);
+    text-transform: none;
+    margin:1rem 0;
+    border:.1rem solid rgba(0,0,0,.3);    
+    width: 30%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.products-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    background:var(--green);
+    color:var(--white);
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;      
+    width: 90%;
+}
+
+.products-btn:hover {
+    transition: all 0.3s ease-in-out;  
+    background:var(--black);
+    color:var(--white);
+}  
+
+
+
+
+/*------------------
+  	Shopping section
+---------------------*/
+
+.cart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;   
+}
+
+
+.cart-container { 
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    width: 50%;
+    padding:2rem;
+    border:.1rem solid rgba(0,0,0,.3);    
+} 
+
+.cart-container h2 {
+    font-size: 4rem;
+}
+
+.cart-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+.cart-title a{
+    font-size: 5rem;
+    margin-right: 2rem;
+    color: var(--green);
+    pointer-events: none;
+}
+
+
+.cart-title h2 {
+    font-size: 5rem;
+    color: var(--black);
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cart-title h2 span {   
+    color: var(--green);   
+    text-transform: uppercase;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.cart-item h3{
+    font-size: 2.5rem;
+}
+
+.total-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.total-items h2 {
+    font-size: 4rem;
+}
+
+.item-img img{
+    width: 10rem;
+}
+
+.trashbuttonContainer i{
+    font-size: 2.5rem;
+    color: var(--green);
+}
+
+.trashbuttonContainer i:hover{
+    color: var(--black);
+    cursor: pointer;
+}
+
+
+
+.cart-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    background:var(--green);
+    color:var(--white);
+    padding:.8rem 3rem;
+    font-size: 2.7rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;      
+}
+
+.cart-btn:hover {
+    transition: all 0.3s ease-in-out;  
+    background:var(--black);
+    color:var(--white);
+}  
+
+
+
+
+
+
+
+/*------------------
+  	contact section
+---------------------*/
+
+.contact {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
+.contact-container {
+  margin-top: 10rem;
+  width: 75%;   
+}
+
+.contact-container h2 {
+  font-size: 5rem;
+  color: var(--black);
+  width: 100%;
+  text-align: center;
+  margin: 0%;
+  text-transform: uppercase;
+}
+
+.contact-container h2 span {   
+    color: var(--green);   
+    text-transform: uppercase;
+}
+
+.contact-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    padding:2rem;
+    border:.1rem solid rgba(0,0,0,.3);
+}
+
+
+.contact-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    background:var(--green);
+    color:var(--white);
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;      
+}
+
+.contact-btn:hover {
+    transition: all 0.3s ease-in-out;  
+    background:var(--black);
+    color:var(--white);
+}  
+
+
+.contact-inputBox{
+    
+    padding:1rem;
+    font-size: 1.7rem;
+    background:var(--lightGrey);
+    text-transform: none;
+    margin:1rem 0;
+    border:.1rem solid rgba(0,0,0,.3);    
+    width: 49%;
+}
+
+.contact-inputMail { 
+    width: 100%;
+}
+.contact-inputMailBox {
+    padding:1rem;
+    font-size: 1.7rem;
+    background:var(--lightGrey);
+    text-transform: none;
+    margin:1rem 0;
+    border:.1rem solid rgba(0,0,0,.3);  
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 20rem;
+    resize: none;
+    width: 100%;
+}
+
+.contact-mailStatus {
+    color: var(--whiteSmoke);
+    font-size: 20px;
+}
+
+
+
+/*
+-------------------
+  suscribe section
+-------------------
+*/
+
+.suscribe {
+    display: flex;   
+    justify-content: center;
+    align-items: center;    
+    margin-bottom: 10rem;
+}
+
+
+.suscribe-container h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.suscribe-inputContainer {
+    display: flex;     
+    align-items: center;
+    border:1rem solid rgba(0,0,0,.15); 
+          
+}
+
+.suscribe-inputContainer input {
+    padding-left:1rem;
+    font-size: 1.7rem;
+    background:var(--lightGrey);
+    text-transform: none;
+    width: 70%; 
+    height: 100%;    
+    margin: 0; 
+}
+
+
+.suscribe-btn {
+    display: inline-block;    
+    background:var(--green);
+    color:var(--white);
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;  
+    width: 30%;
+    height: 100%;    
+}
+  
+.suscribe-btn:hover {
+    transition: all 0.3s ease-in-out;  
+    background:var(--black);
+    color:var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+/*
+----------------
+  about section
+----------------
+*/
+
+.about {
+    display: flex;   
+    justify-content: center;
+    width: 90%; 
+    margin-bottom: 1rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.about-social {
+    width: 40%;  
+    margin-right: 10rem;
+}
+
+.about-social p {
+    font-size: 1.7rem;
+    text-align: justify;
+    margin-bottom:1rem;
+}
+
+
+.about-social h3 {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+}
+
+.about-social a {
+    color: var(--green);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 4rem;
+    transition: all 0.3s ease;   
+}
+
+.about-social a:hover{
+    color: var(--black);
+    transition: all 0.3s ease;  
+}
+
+
+
+.about-links {
+    width: 30%; 
+    margin-right: 10rem;
+}
+
+.about-links h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-links ul {
+    display: flex;
+    flex-direction: column;   
+    list-style: none;    
+}
+
+.about-items { 
+    text-decoration: none;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 1.7rem;  
+}
+
+.about-items a:hover{
+    color: var(--orange);
+    transition: all 0.3s ease;  
+}
+
+
+
+
+
+.about-apps {
+    width: 30%;
+
+}
+
+.about-apps h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-apps a {
+    color: var(--green);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 4rem;
+    transition: all 0.3s ease;    
+}
+
+.about-apps a:hover{
+    color: var(--black);
+    transition: all 0.3s ease;  
+}
+
+
+
+
+
+
+/*
+-------------
+    footer
+-------------
+*/
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--black); */
+    color: var(--black);
+    font-size: 1rem;
+    bottom: 0; 
+    left: 0;
+    right: 0;    
+    z-index: 1;
+    height: 8rem;
+    border-top:.1rem solid rgba(0,0,0,.3);  
+}
+
+footer p {
+    margin: 0.5rem 0;
+    text-align: center;
+    margin-right: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+footer a {
+    color: var(--black);
+    text-decoration: none;
+    margin: 0.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;   
+}
+
+footer a:hover{
+    color: var(--orange);
+}
+
+
+
+
+
+
+
+
