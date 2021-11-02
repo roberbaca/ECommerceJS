@@ -27,6 +27,9 @@ html {
     scroll-behavior: smooth;
 }
 
+.fa-trash {
+    pointer-events: none; /* para poder clickear en los iconos de font awesome*/
+}
 
 
 /*------------------
@@ -281,6 +284,8 @@ a:hover {
 
 
 
+
+
 /*------------------
   	Shopping section
 ---------------------*/
@@ -295,9 +300,7 @@ a:hover {
 
 .cart-container { 
     display: flex;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
+    flex-direction: column; 
     width: 50%;
     padding:2rem;
     border:.1rem solid rgba(0,0,0,.3);    
@@ -337,10 +340,15 @@ a:hover {
     text-transform: uppercase;
 }
 
+.cart-list {
+    padding: 4rem;
+}
+
+
 .cart-item {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -364,7 +372,7 @@ a:hover {
     width: 10rem;
 }
 
-.trashbuttonContainer i{
+/* .trashbuttonContainer i{
     font-size: 2.5rem;
     color: var(--green);
 }
@@ -372,8 +380,25 @@ a:hover {
 .trashbuttonContainer i:hover{
     color: var(--black);
     cursor: pointer;
+} */
+
+
+.trashButton{
+    padding:1rem 1rem 1rem 1rem;
+    font-size: 2.5rem;
+    outline: none;
+    border: none;
+    color: var(--green);
+    cursor: pointer;  
+    transition: all 0.3s ease;   
+    background-color: white;
 }
 
+
+.trashButton:hover {    
+    transition: all 0.3s ease;
+    color: var(--black);
+}
 
 
 .cart-btn {
@@ -393,10 +418,6 @@ a:hover {
     background:var(--black);
     color:var(--white);
 }  
-
-
-
-
 
 
 
