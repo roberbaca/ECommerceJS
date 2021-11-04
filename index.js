@@ -1,42 +1,6 @@
-/* https://www.youtube.com/watch?v=rGtNYW_DK44 */
-
 let cartList = [];  // array de objetos para guardar los productos
 
-// buscamos en el DOM
-const checkoutButton = document.getElementById("checkoutButton");
-const addToCartButtons = document.getElementsByClassName("products-btn");   // todos los botones con esta clase
-//const trashButtons = document.getElementsByClassName("trashButton");        // todos los botones con esta clase
-//const trashButtons = document.getElementById("trashButton");        // todos los botones con esta clase
-const list = document.getElementById("cart-list");
-
-//const filterButton = document.getElementById("filterToDo");
-
-
-
-// Agregamos los escuchadores de eventos
-document.addEventListener("DOMContentLoaded", loadLocal); // cargamos la lista
-document.addEventListener("click", removeFromCart); // cargamos la lista
-
-for (let i = 0; i < addToCartButtons.length; i++) {
-    let addButton = addToCartButtons[i];
-    addButton.addEventListener("click", addToCart);
-}
-
-/*
-for (let i = 0; i < trashButtons.length; i++) {
-    let removeButton = trashButtons[i];
-    removeButton.addEventListener("click", removeFromCart);
-}
-*/
-
-checkoutButton.addEventListener("click", proceedToCheckout);
-
-
-
-//filterButton.addEventListener("change", filterList);
-
-
-
+// declaramos el objeto 
 let newProduct = {
     Name: "",
     Price: 0,
@@ -45,6 +9,31 @@ let newProduct = {
 };
 
 
+// buscamos en el DOM
+const checkoutButton = document.getElementById("checkoutButton");
+const emptyCartButton = document.getElementById("emptyCartButton");
+const addToCartButtons = document.getElementsByClassName("products-btn");   // todos los botones con esta clase
+const list = document.getElementById("cart-list");
+const totalAmount = document.getElementById("total-items");
+const checkoutConfirmation = document.getElementById("cart-message");
+
+// agregamos los escuchadores de eventos
+document.addEventListener("DOMContentLoaded", loadLocal); 
+document.addEventListener("click", removeFromCart); 
+
+for (let i = 0; i < addToCartButtons.length; i++) {
+    let addButton = addToCartButtons[i];
+    addButton.addEventListener("click", addToCart);
+}
+
+checkoutButton.addEventListener("click", proceedToCheckout);
+
+
+
+
+/*-----------------
+      FUNCIONES
+-------------------*/
 
 
 // funcion para agregar productos a la lista
@@ -53,10 +42,10 @@ function addToCart(e) {
     e.preventDefault();                 // evitamos de esta forma recargar la pagina al tocar el boton
     
     let cartItem = e.target.parentElement;
-    let itemName = cartItem.getElementsByClassName("products-card-title")[0].innerText;     // obtengo nombre del producto
-    let itemPrice = cartItem.getElementsByClassName("products-card-price")[0].innerText;    // obtengo precio del producto
-    let itemQuantity = cartItem.getElementsByClassName("products-inputBox")[0].value;       // obtengo cantidad del producto
-    let itemImg = cartItem.getElementsByClassName("products-card-img")[0].src;              // obtengo imagen del producto
+    let itemName = cartItem.getElementsByClassName("products-card-title")[0].innerText;              // obtengo nombre del producto
+    let itemPrice = cartItem.getElementsByClassName("products-card-price")[0].innerText.slice(2);    // obtengo precio del producto
+    let itemQuantity = cartItem.getElementsByClassName("products-inputBox")[0].value;                // obtengo cantidad del producto
+    let itemImg = cartItem.getElementsByClassName("products-card-img")[0].src;                       // obtengo imagen del producto
     
     console.log("se agrego un item");   
     console.log(itemName);
@@ -70,9 +59,11 @@ function addToCart(e) {
         Img: itemImg      
     };    
 
-    cartList.push(newProduct);         // lo agregamos al carrito        
-    saveLocal(cartList);               // Guardamos la lista
+    cartList.push(newProduct);         // aregamos un nuevo item al carrito        
+    saveLocal(cartList);               // guardamos la lista en localStorage
+    showTotalAmount(cartList);         // sumamos el precio de todos los items del carrito
     printList(cartList);               // llamamos a la funcion para renderizarlo en pantalla
+
     console.log(cartList);    
 }
 
@@ -88,79 +79,71 @@ function removeFromCart(e) {
             
         // Usamos el metodo de arrays Splice, pasamos por parametro el indice donde comenzamos a borrar 
         // elementos y la cantidad de elementos a eliminar
-        cartList.splice(indexItem, 1);     
-        saveLocal(cartList);  // Guardamos la lista             
-        printList(cartList);  // Renderizamos la lista
+        cartList.splice(indexItem, 1); 
+        showTotalAmount(cartList);          // sumamos el precio de todos los items del carrito que quedaron   
+        saveLocal(cartList);                // guardamos la lista             
+        printList(cartList);                // renderizamos la lista
     }
       
     // eliminamos TODO el contenido guardado en local storage       
-    if(e.target.id === "clearAllButton"){ 
-        cartList.splice(0, cartList.length);       
-        removeLocal();              
+    if(e.target.id === "emptyCartButton"){ 
+        cartList.splice(0, cartList.length);  
+        checkoutConfirmation.innerText = "";     
+        removeLocal();  
+        showTotalAmount(cartList);                     
         printList(cartList);
     }        
 }
 
-
-// funcion para filtrar el listado
-
-/*
-function filterList(e){
-
-    const filterValue = e.target.value;
-    console.log("buscando...");
-    console.log(filterValue);
-
-    const taskStatus = newTask.Status;
+// funcion para calcular el valor total a pagar
+function showTotalAmount(){
     
-    if(filterValue === "completed"){
-        completedList = toDolist.filter(valor => valor.Status === "completed");
-        printList(completedList);
-    }
-     
-    if(filterValue === "uncompleted"){
-        uncompletedList = toDolist.filter(valor => valor.Status === "uncompleted");
-        printList(uncompletedList);
-    }
-      
-    if(filterValue === "all"){        
-        printList(toDolist);
-    } 
-}
+    let total = 0;
 
-*/
+    cartList.forEach(cart => {
+        total += cart.Price * cart.Quantity;
+    });
+
+    if (cartList.length > 0){
+        totalAmount.innerText = `Total: $ ${Math.round(total *100)/100}`;
+    }
+    else {
+        totalAmount.innerText = ``;
+    }
+}
 
 
 
 // funcion para mostrar en pantalla la lista
 function printList(myArray) {
     
-    list.innerHTML = `${myArray.map((valor, index) =>
+    list.innerHTML = `${myArray.map((value, index) =>
         `<div class="cart-item" key = ${index}>                    
             <div class="item-img">
-                <img src="${valor.Img}" alt="product-photo">
+                <img src="${value.Img}" alt="product-photo">
             </div>
             <div class = "item-description">
-                <h3>${valor.Name}</h3>
+                <h3>${value.Name}</h3>
             </div>                     
             <div class = "item-quantity">
-                <h3>x ${valor.Quantity} kg</h3>
+                <h3>${value.Quantity} kg</h3>
             </div>    
             <div class = "item-price">
-                <h3>${valor.Price}</h3>
+                <h3>${value.Price * value.Quantity}</h3>
             </div>   
             <div class = "trashButtonContainer">
                 <button class="trashButton" id = "trashButton" type = "submit"><i class='fas fa-trash'></i></button>   
-            </div> 
+            </div>            
         </div>   `        
-    ).join("")}` 
+    ).join("")}`; 
 }
 
 
 // funcion para indicar que la compra se realizo con exito
-function proceedToCheckout() {
-    alert("compra realizada con exito");
-    console.log("compra realizada");
+function proceedToCheckout() {    
+    if (cartList.length > 0) {
+        checkoutConfirmation.innerText = "Your purchase was succesful !";
+    }
 }
 
 

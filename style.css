@@ -340,6 +340,17 @@ a:hover {
     text-transform: uppercase;
 }
 
+
+.cart-list-headers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+}
+
+.cart-list-headers h2 {
+    font-size: 2.8rem;
+}
+
 .cart-list {
     padding: 4rem;
 }
@@ -368,21 +379,23 @@ a:hover {
     font-size: 4rem;
 }
 
+.cart-message {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-message h2 {
+    font-size: 3rem;
+    color: var(--orange);
+}
+
+
 .item-img img{
     width: 10rem;
 }
-
-/* .trashbuttonContainer i{
-    font-size: 2.5rem;
-    color: var(--green);
-}
-
-.trashbuttonContainer i:hover{
-    color: var(--black);
-    cursor: pointer;
-} */
-
-
 .trashButton{
     padding:1rem 1rem 1rem 1rem;
     font-size: 2.5rem;
@@ -394,12 +407,10 @@ a:hover {
     background-color: white;
 }
 
-
 .trashButton:hover {    
     transition: all 0.3s ease;
     color: var(--black);
 }
-
 
 .cart-btn {
     display: inline-block;
@@ -418,6 +429,23 @@ a:hover {
     background:var(--black);
     color:var(--white);
 }  
+
+.empty-cart-btn {
+    display: inline-block;   
+    background:var(--green);
+    color:var(--white);
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;      
+}
+
+.empty-cart-btn:hover {
+    transition: all 0.3s ease-in-out;  
+    background:var(--black);
+    color:var(--white);
+} 
 
 
 

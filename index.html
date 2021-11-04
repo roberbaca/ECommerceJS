@@ -3,6 +3,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Integrador JS - NUCBA">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Roberto Nicolas Baca">
+    
 
     <!-- FONT AWESOME -->
     <link href="./assets/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet"> <!--load all styles -->
@@ -11,6 +15,7 @@
 
     <title>Green Market</title>
 </head>
+
 <body>
     <!-- header section starts-->
     <header class="navbar-section" id="home">
@@ -189,70 +194,29 @@
 
         <div class="cart-container" >           
 
-            <div class = "cart-list" id = "cart-list">            
-                
-                <!-- <div class="cart-item">                    
-                    <div class="item-img">
-                        <img src="./assets/products/carrot.jpg" alt="">
-                    </div>
-                    <div class = "item-description">
-                        <h3>Carrot</h3>
-                    </div>                     
-                    <div class = "item-quantity">
-                        <h3>x 3 kg</h3>
-                    </div>    
-                    <div class = "item-price">
-                        <h3>$ 2.55</h3>
-                    </div>   
-                    <div class = "trashButtonContainer">
-                        <button class="trashButton" id="trashButton" type = "submit"><i class='fas fa-trash'></i></button>   
-                    </div> 
-                </div>   
-
-                <div class="cart-item">                    
-                    <div class="item-img">
-                        <img src="./assets/products/radish.jpg" alt="">
-                    </div>
-                    <div class = "item-description">
-                        <h3>Radish</h3>
-                    </div>                     
-                    <div class = "item-quantity">
-                        <h3>x 3 kg</h3>
-                    </div>    
-                    <div class = "item-price">
-                        <h3>$ 2.55</h3>
-                    </div>        
-                    <div class = "trashButtonContainer">
-                        <button class="trashButton" id="trashButton" type = "submit"><i class='fas fa-trash'></i></button>   
-                    </div>                    
-                </div>    
-                
-                <div class="cart-item">                    
-                    <div class="item-img">
-                        <img src="./assets/products/corn.jpg" alt="">
-                    </div>
-                    <div class = "item-description">
-                        <h3>Corn</h3>
-                    </div>                     
-                    <div class = "item-quantity">
-                        <h3>x 3 kg</h3>
-                    </div>    
-                    <div class = "item-price">
-                        <h3>$ 2.55</h3>
-                    </div>   
-                    <div class = "trashButtonContainer">
-                        <button class="trashButton" id="trashButton" type = "submit"><i class='fas fa-trash'></i></button>   
-                    </div>                             
-                </div>   -->
+            <div class = "cart-list-headers">
+                <h2>Product</h2> 
+                <h2>Description</h2> 
+                <h2>Quantity</h2>
+                <h2>Price</h2>  
+                <button type = "submit" class = "empty-cart-btn" id="emptyCartButton">Empty Cart</button>
+            </div>
 
 
+            <div class = "cart-list" id = "cart-list">                           
+                <!-- Aca se renderiza el carrito por JS -->
             </div>
 
             <div class="total-items">
-                <h2>Total: $ 1.100</h2>                    
+                <h2 id ="total-items">Total: $ 0</h2>                    
                 <button type = "submit" class = "cart-btn" id="checkoutButton">Proceed to checkout</button>
             </div>
-               
+
+            <div class = "cart-message">
+                <h2 id ="cart-message">
+                    <!-- Aca se renderiza mensaje de compra realizada con exito -->
+                </h2>
+            </div>       
 
            
         </div>       
@@ -262,6 +226,7 @@
 
 
     <!--contact section starts -->
+    <!-- Si me escribis un mail desde la pagina de contacto, me llegan a mi correo ! -->
     <section class = "contact" id = "contact">    
 
         <div class="contact-container">        
@@ -295,8 +260,6 @@
         </div>
     </section>
     <!--suscribe section ends -->
-
-
 
 
    <!--about section starts -->
