@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyecto Integrador JS - NUCBA">
+    <meta name="description" content="Proyecto Integrador JS - NUCBA: ecommerce">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Roberto Nicolas Baca">
     
@@ -13,7 +14,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <title>Green Market</title>
+    <title>Fresh Market</title>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
 		    
         <div class = "logo-container">
             <a class="siteLogo" href="index.html">
-                <img src="./assets/circleLogo.png" alt="siteLogo">
+                <img src="./assets/logo/circleLogo.png" alt="siteLogo">
             </a>
         </div>
 
@@ -38,8 +39,11 @@
         </div>
 
         <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>     
-            <a href="#" class="fas fa-user-circle"></a>
+            <a href="#cart" class="fas fa-shopping-cart"></a>     
+            <a href="./login/login.html" class="fas fa-user-circle">
+                <p class = "username" id = "username">Login</p>
+            </a>            
+            <p class = "logout" id = "logout">Log out</p>
         </div>
     	
     </header>
@@ -233,14 +237,14 @@
             <h2>Contact <span>Us</span></h2>        
             <form action="https://formspree.io/f/mdoyyjgo" method ="POST" class = "contact-form" id="my-form">
                 <div class = "contact-name">
-                    <input class = "contact-inputBox" type="text" placeholder="first name" name="first_name">
-                    <input class = "contact-inputBox" type="text" placeholder="last name" name="last_name">
+                    <input class = "contact-inputBox" type="text" placeholder="First Name" name="first_name" autocomplete="on" required>
+                    <input class = "contact-inputBox" type="text" placeholder="Last Name" name="last_name" autocomplete="on" required>
                 </div>
                 <div class = "contact-inputMail"> 
-                    <input class = "contact-inputMailBox" type="email" placeholder="email" name="email">
+                    <input class = "contact-inputMailBox" type="email" placeholder="Email Address" name="email" autocomplete="on" required>
                 </div>
              
-                <textarea class = "contact-inputBox" name="message" id="" cols="30" rows="10" placeholder="message"></textarea>                
+                <textarea class = "contact-inputBox" name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>                
                 <button class = "contact-btn" type="submit" value="submit" name="submit" id="my-form-button">Send Message</button>
                 <p class = "contact-mailStatus" id="my-form-status"></p>
             </form>         
@@ -254,7 +258,7 @@
         <div class = "suscribe-container">
             <h2>Suscribe to get the latest deals!</h2>
             <div class = "suscribe-inputContainer">
-                <input class = "susribe-inputBox" type="email" placeholder="enter your email" name="email">
+                <input class = "susribe-inputBox" type="email" placeholder="enter your email" name="email" autocomplete="off" required>
                 <a href="#" class="suscribe-btn">Suscribe</a>            
             </div>
         </div>

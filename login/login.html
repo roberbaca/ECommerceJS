@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login Page">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Roberto Nicolas Baca">
+        
+        <!-- FONT AWESOME -->
+        <link href="../assets/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="./login.css">
+        <title>Login</title>
+
+    </head>
+    <body>
+
+ 
+ 
+
+        <div class="wrapper">
+            <div class="title-text">
+               <div class="title login">
+                   <img class = "login-logo" src="../../assets/logo/circleLogo.png" alt="loginLogo">  
+                   <h1 class = form-title>Login</h1>                  
+               </div>
+               <div class="title register">
+                    <img class = "login-logo" src="../../assets/logo/circleLogo.png" alt="loginLogo">  
+                   <h1 class = form-title>Register</h1>                  
+               </div>
+            </div>
+
+            <div class="form-container">
+               <div class="slide-controls">
+                  <input type="radio" name="slide" id="login" checked>
+                  <input type="radio" name="slide" id="register">
+                  <label for="login" class="slide login">Login</label>
+                  <label for="register" class="slide register">Register</label>
+                  <div class="slider-tab"></div>
+               </div>
+
+               <div class="form-inner">
+
+                <!-- LOGIN -->
+                  <form action="#" class="login">
+                     <div class="field">
+                        <input type="text" id = "input-email" placeholder="Email Address" autocomplete="off" required>
+                     </div>
+                     <div class="field">
+                        <input type="password" id = "input-password" placeholder="Password" autocomplete="off" required>
+                     </div>
+                     <div class="pass-link">
+                        <a href="#">Forgot password?</a>
+                     </div>
+                     <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <button class = "login-btn" id = "login-btn" type="submit">Login</button>                      
+                     </div>
+                     <div class="register-link">
+                        Not a member? <a href="">Register now</a>
+                     </div>
+                  </form>
+
+                  <!-- SIGNUP -->
+                  <form action="#" class="register">
+                     <div class="field">
+                        <input type="text" placeholder="Email Address" autocomplete="off" required>
+                     </div>
+                     <div class="field">
+                        <input type="password" placeholder="New Password" autocomplete="off" required>
+                     </div>
+                     <div class="field">
+                        <input type="password" placeholder="Confirm password" autocomplete="off" required>
+                     </div>
+                     <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <button class = "register-btn" id = "register-btn" type="submit">Register</button>                      
+                     </div>
+                  </form>
+
+               </div>
+            </div>
+         </div>
+
+<!-- SCRIPT -->
+<script src="login.js"></script>
+
+</body>
+</html>

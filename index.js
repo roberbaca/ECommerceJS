@@ -1,4 +1,6 @@
 let cartList = [];  // array de objetos para guardar los productos
+let token = null;
+let username = null;
 
 // declaramos el objeto 
 let newProduct = {
@@ -16,10 +18,15 @@ const addToCartButtons = document.getElementsByClassName("products-btn");   // t
 const list = document.getElementById("cart-list");
 const totalAmount = document.getElementById("total-items");
 const checkoutConfirmation = document.getElementById("cart-message");
+const usernameID = document.getElementById("username");
+const logoutButton = document.getElementById("logout");
+
+//usernameID.innerText = "Login";
 
 // agregamos los escuchadores de eventos
 document.addEventListener("DOMContentLoaded", loadLocal); 
 document.addEventListener("click", removeFromCart); 
+
 
 for (let i = 0; i < addToCartButtons.length; i++) {
     let addButton = addToCartButtons[i];
@@ -27,7 +34,7 @@ for (let i = 0; i < addToCartButtons.length; i++) {
 }
 
 checkoutButton.addEventListener("click", proceedToCheckout);
-
+logoutButton.addEventListener("click", logout);
 
 
 
@@ -89,7 +96,7 @@ function removeFromCart(e) {
     if(e.target.id === "emptyCartButton"){ 
         cartList.splice(0, cartList.length);  
         checkoutConfirmation.innerText = "";     
-        removeLocal();  
+        //removeLocal();  
         showTotalAmount(cartList);                     
         printList(cartList);
     }        
@@ -105,7 +112,7 @@ function showTotalAmount(){
     });
 
     if (cartList.length > 0){
-        totalAmount.innerText = `Total: $ ${Math.round(total *100)/100}`;
+        totalAmount.innerText = `Total: $ ${(Math.round(total *100)/100).toFixed(2)}`;
     }
     else {
         totalAmount.innerText = ``;
@@ -128,8 +135,8 @@ function printList(myArray) {
             <div class = "item-quantity">
                 <h3>${value.Quantity} kg</h3>
             </div>    
-            <div class = "item-price">
-                <h3>${value.Price * value.Quantity}</h3>
+            <div class = "item-price">                
+                <h3>${(Math.round(value.Price * value.Quantity * 100) /100).toFixed(2)}</h3>
             </div>   
             <div class = "trashButtonContainer">
                 <button class="trashButton" id = "trashButton" type = "submit"><i class='fas fa-trash'></i></button>   
@@ -138,12 +145,37 @@ function printList(myArray) {
     ).join("")}`; 
 }
 
+function clearList() {
+    list.innerHTML = "";
+    usernameID.innerText = "Login";
+}
+
 
 // funcion para indicar que la compra se realizo con exito
 function proceedToCheckout() {    
-    if (cartList.length > 0) {
+    if (cartList.length > 0 && token != null) {
         checkoutConfirmation.innerText = "Your purchase was succesful !";
     }
+
+    if (token == null){
+        alert("Please login with your account");
+    }
+}
+
+
+function logout() {
+    
+    console.log("deslogueando");
+    removeLocal();  
+    window.location.assign("./index.html");
+    //showTotalAmount(cartList);                     
+    //printList(cartList);
+    //window.localStorage.setItem('token', null);
+    //window.localStorage.setItem('username', null);     
+    //loadLocal();
+    //clearList();
+    //console.log(token);
+    //console.log(username);
 }
 
 
@@ -154,20 +186,43 @@ function proceedToCheckout() {
 function saveLocal(myArray) {
  
     // localStorage solo puede guardar strings, para guardar arrays u objetos usamos JSON.stringify()
-    window.localStorage.setItem('cartList', JSON.stringify(cartList));
+    
+    if(token !== null ){
+        window.localStorage.setItem('cartList', JSON.stringify(cartList));
+    }
 }
 
 
 function loadLocal() {
-    if(localStorage.getItem("cartList") !== null){
+    
+    //console.log("valor " + localStorage.getItem("username"));
+
+    if(localStorage.getItem("token") !== null){
+        token = window.localStorage.getItem('token');               
+    }  else {
+        //clearList();
+        //usernameID.innerText = "Login";
+    }
+
+    if(localStorage.getItem("username") !== null){   
+        username =  window.localStorage.getItem("username");  
+        usernameID.innerText = username;            
+    }    
+
+    if(localStorage.getItem("cartList") !== null && token !== null ){
         cartList = JSON.parse(window.localStorage.getItem('cartList'));
-        printList(cartList);                 
-    }           
+        printList(cartList);  
+        showTotalAmount(cartList);
+    } else {
+        //clearList();
+    }     
+   
+    //usernameID.innerText = "Login";
+    
 }
 
 function removeLocal() {
     // borramos el contenido del local storage
     window.localStorage.clear();
 }
-
 

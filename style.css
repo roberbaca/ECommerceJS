@@ -2,11 +2,13 @@
 
 :root {
   --green:#27ae60;
+  /* --green: -webkit-linear-gradient(left, #348b3b, #22c022); */
   --black:#1d1d30;
   --white:#fff;
   --grey: #666;
   --orange: #f1a026;
   --lightGrey: #f7f7f7;
+  --brownish:  #999;
 }
 
 *{
@@ -63,6 +65,27 @@ a:hover {
     font-size: 3rem;
     color:var(--black);
     padding-left: 3rem;
+    transition: all 0.3s ease-in-out;     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons p {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.logout {
+    border:.1rem solid rgba(0,0,0,.3);
+    padding: 0.5rem;
+    transition: all 0.3s ease-in-out;     
+}
+
+.logout:hover {
+    background-color: var(--black);
+    cursor: pointer;
+    color: white;
     transition: all 0.3s ease-in-out;     
 }
 
@@ -142,13 +165,11 @@ a:hover {
 }
 
 .cover-content {
-    display: flex;
-    /* justify-content: center; */
+    display: flex;    
     align-items: left;
     flex-direction: column;
     z-index: 1; 
-    position: absolute;
-    /* text-align: left; */
+    position: absolute;    
     margin-left: 35%;    
 }
 
@@ -175,6 +196,7 @@ a:hover {
     cursor: pointer;
     transition: all 0.3s ease-in-out;  
     width: 25rem;
+    border-radius: 5px;
 }
   
 .btn:hover {
@@ -204,10 +226,18 @@ a:hover {
     justify-content: center;
     align-items: center;
     margin: 1rem;    
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
 .products-card img {
     width: 50%;
+    transition: all 0.3s ease-in-out; 
+}
+
+.products-card-img:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out; 
 }
 
 .products-title {
@@ -243,6 +273,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;     
+    
 }
 
 .products-input-container h3 {
@@ -260,6 +291,7 @@ a:hover {
     width: 30%;
     margin-left: 2rem;
     margin-right: 2rem;
+    border-radius: 5px;
 }
 
 .products-btn {
@@ -273,6 +305,7 @@ a:hover {
     cursor: pointer;
     transition: all 0.3s ease-in-out;      
     width: 90%;
+    border-radius: 5px;
 }
 
 .products-btn:hover {
@@ -294,7 +327,7 @@ a:hover {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;       
 }
 
 
@@ -303,7 +336,9 @@ a:hover {
     flex-direction: column; 
     width: 50%;
     padding:2rem;
-    border:.1rem solid rgba(0,0,0,.3);    
+    border:.1rem solid rgba(0,0,0,.3);   
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1); 
+    border-radius: 5px;
 } 
 
 .cart-container h2 {
@@ -396,6 +431,7 @@ a:hover {
 .item-img img{
     width: 10rem;
 }
+
 .trashButton{
     padding:1rem 1rem 1rem 1rem;
     font-size: 2.5rem;
@@ -421,7 +457,8 @@ a:hover {
     font-size: 2.7rem;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;      
+    transition: all 0.3s ease-in-out;     
+    border-radius: 5px; 
 }
 
 .cart-btn:hover {
@@ -438,7 +475,8 @@ a:hover {
     font-size: 1.7rem;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;      
+    transition: all 0.3s ease-in-out;    
+    border-radius: 5px;  
 }
 
 .empty-cart-btn:hover {
@@ -457,11 +495,13 @@ a:hover {
     display: flex;
     justify-content: center;
     margin-bottom: 10rem;
+    
 }
 
 .contact-container {
   margin-top: 10rem;
   width: 75%;   
+  
 }
 
 .contact-container h2 {
@@ -495,6 +535,8 @@ a:hover {
     flex-wrap: nowrap;
     padding:2rem;
     border:.1rem solid rgba(0,0,0,.3);
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
 
@@ -504,10 +546,11 @@ a:hover {
     background:var(--green);
     color:var(--white);
     padding:.8rem 3rem;
-    font-size: 1.7rem;
+    font-size: 2.5rem;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;      
+    transition: all 0.3s ease-in-out;   
+    border-radius: 5px;   
 }
 
 .contact-btn:hover {
@@ -526,11 +569,43 @@ a:hover {
     margin:1rem 0;
     border:.1rem solid rgba(0,0,0,.3);    
     width: 49%;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+}
+
+.contact-name ::placeholder {
+    color: var(--brownish);
+}
+
+.contact-inputMail ::placeholder {
+    color: var(--brownish);
+}
+
+
+textarea::placeholder {
+    color: var(--brownish);
 }
 
 .contact-inputMail { 
     width: 100%;
 }
+
+.contact-name input:focus{
+    border-color: var(--green); 
+}
+
+
+.contact-inputMail input:focus{
+    border-color: var(--green);  
+}
+
+.contact-inputBox:focus {
+    border-color: var(--green);  
+}
+
+
+
 .contact-inputMailBox {
     padding:1rem;
     font-size: 1.7rem;
@@ -539,13 +614,19 @@ a:hover {
     margin:1rem 0;
     border:.1rem solid rgba(0,0,0,.3);  
     width: 100%;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
 }
 
 .contact-form textarea {
     height: 20rem;
     resize: none;
     width: 100%;
+    border-radius: 5px;
 }
+
+
 
 .contact-mailStatus {
     color: var(--whiteSmoke);
@@ -576,8 +657,7 @@ a:hover {
 .suscribe-inputContainer {
     display: flex;     
     align-items: center;
-    border:1rem solid rgba(0,0,0,.15); 
-          
+    border:1rem solid rgba(0,0,0,.15);          
 }
 
 .suscribe-inputContainer input {
@@ -587,7 +667,7 @@ a:hover {
     text-transform: none;
     width: 70%; 
     height: 100%;    
-    margin: 0; 
+    margin: 0;     
 }
 
 
@@ -601,7 +681,7 @@ a:hover {
     cursor: pointer;
     transition: all 0.3s ease-in-out;  
     width: 30%;
-    height: 100%;    
+    height: 100%;        
 }
   
 .suscribe-btn:hover {
@@ -609,13 +689,6 @@ a:hover {
     background:var(--black);
     color:var(--white);
 }
-
-
-
-
-
-
-
 
 
 
@@ -657,6 +730,7 @@ a:hover {
     margin-right: 1rem;
     font-size: 4rem;
     transition: all 0.3s ease;   
+    
 }
 
 .about-social a:hover{
@@ -669,6 +743,7 @@ a:hover {
 .about-links {
     width: 30%; 
     margin-right: 10rem;
+    font-weight: 600;
 }
 
 .about-links h3 {
@@ -693,10 +768,6 @@ a:hover {
     color: var(--orange);
     transition: all 0.3s ease;  
 }
-
-
-
-
 
 .about-apps {
     width: 30%;
@@ -768,6 +839,151 @@ footer a:hover{
     color: var(--orange);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------
+  	Login section
+---------------------*/
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;  
+    background-image: url(./assets/login/img/flat-lay-assortment-vegetables-with-copy-space.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.login-logo {
+    width: 13rem;
+    margin-bottom: 2rem;
+}
+
+.login-container {
+  margin-top: 1rem;
+  width: 100%;   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.login-container h2 {
+  font-size: 5rem;
+  color: var(--black);
+  width: 100%;
+  text-align: center;
+  margin: 0%;
+  text-transform: uppercase;
+}
+
+.login-container h2 span {   
+    color: var(--green);   
+    text-transform: uppercase;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    padding:2rem;
+    border:.1rem solid rgba(0,0,0,.3);
+   
+}
+
+.login-form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-form-content a {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--green);
+    font-weight: 600;
+}
+
+.login-form-content p {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+
+.login-form-content a:hover {
+    color: var(--orange);
+    cursor: pointer;
+}
+
+.login-signup {
+    display: flex;
+}
+
+.login-inputMail {     
+    padding:1rem;
+    font-size: 1.7rem;
+    background:var(--lightGrey);
+    text-transform: none;
+    margin:1rem 0;
+    border:.1rem solid rgba(0,0,0,.3);    
+    width: 40rem;
+}
+
+.login-inputPassword {    
+    padding:1rem;
+    font-size: 1.7rem;
+    background:var(--lightGrey);
+    text-transform: none;
+    margin:1rem 0;
+    border:.1rem solid rgba(0,0,0,.3);    
+    width: 40rem;
+}
+
+
+.login-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    background:var(--green);
+    color:var(--white);
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;  
+    width: 20rem;
+    margin-bottom: 4rem; 
+}
+
+.login-btn:hover {
+    transition: all 0.3s ease-in-out;  
+    background:var(--black);
+    color:var(--white);
+}  
 
 
 
