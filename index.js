@@ -21,7 +21,6 @@ const checkoutConfirmation = document.getElementById("cart-message");
 const usernameID = document.getElementById("username");
 const logoutButton = document.getElementById("logout");
 
-//usernameID.innerText = "Login";
 
 // agregamos los escuchadores de eventos
 document.addEventListener("DOMContentLoaded", loadLocal); 
@@ -46,7 +45,7 @@ logoutButton.addEventListener("click", logout);
 // funcion para agregar productos a la lista
 function addToCart(e) {
 
-    e.preventDefault();                 // evitamos de esta forma recargar la pagina al tocar el boton
+    e.preventDefault();  // evitamos de esta forma recargar la pagina al tocar el boton
     
     let cartItem = e.target.parentElement;
     let itemName = cartItem.getElementsByClassName("products-card-title")[0].innerText;              // obtengo nombre del producto
@@ -92,11 +91,11 @@ function removeFromCart(e) {
         printList(cartList);                // renderizamos la lista
     }
       
-    // eliminamos TODO el contenido guardado en local storage       
+    // eliminamos TODO el contenido guardado en el carrito   
     if(e.target.id === "emptyCartButton"){ 
         cartList.splice(0, cartList.length);  
         checkoutConfirmation.innerText = "";     
-        //removeLocal();  
+        saveLocal(cartList);                
         showTotalAmount(cartList);                     
         printList(cartList);
     }        
@@ -145,13 +144,15 @@ function printList(myArray) {
     ).join("")}`; 
 }
 
+// funcion para borrar la lista
 function clearList() {
+
     list.innerHTML = "";
     usernameID.innerText = "Login";
 }
 
 
-// funcion para indicar que la compra se realizo con exito
+// funcion para mostrar un mensaje indicando que la compra se realizo con exito
 function proceedToCheckout() {    
     if (cartList.length > 0 && token != null) {
         checkoutConfirmation.innerText = "Your purchase was succesful !";
@@ -163,19 +164,12 @@ function proceedToCheckout() {
 }
 
 
+// funcion para desloguearse
 function logout() {
     
     console.log("deslogueando");
     removeLocal();  
-    window.location.assign("./index.html");
-    //showTotalAmount(cartList);                     
-    //printList(cartList);
-    //window.localStorage.setItem('token', null);
-    //window.localStorage.setItem('username', null);     
-    //loadLocal();
-    //clearList();
-    //console.log(token);
-    //console.log(username);
+    window.location.assign("./index.html");  
 }
 
 
@@ -183,46 +177,39 @@ function logout() {
     LOCAL STORAGE
 -------------------*/
 
+// funcion para guardar datos en localStorage
 function saveLocal(myArray) {
  
-    // localStorage solo puede guardar strings, para guardar arrays u objetos usamos JSON.stringify()
-    
+    // localStorage solo puede guardar strings, para guardar arrays u objetos usamos JSON.stringify()    
     if(token !== null ){
-        window.localStorage.setItem('cartList', JSON.stringify(cartList));
+        window.localStorage.setItem('cartList' + username, JSON.stringify(cartList));
     }
 }
 
-
+// funcion para cargar datos de localStorage
 function loadLocal() {
     
-    //console.log("valor " + localStorage.getItem("username"));
-
-    if(localStorage.getItem("token") !== null){
+    if(localStorage.getItem('token') !== null){
         token = window.localStorage.getItem('token');               
-    }  else {
-        //clearList();
-        //usernameID.innerText = "Login";
-    }
+    }  
 
-    if(localStorage.getItem("username") !== null){   
+    if(localStorage.getItem('username') !== null){   
         username =  window.localStorage.getItem("username");  
         usernameID.innerText = username;            
     }    
 
-    if(localStorage.getItem("cartList") !== null && token !== null ){
-        cartList = JSON.parse(window.localStorage.getItem('cartList'));
+    if(localStorage.getItem('cartList' + username) !== null && token !== null ){
+        cartList = JSON.parse(window.localStorage.getItem('cartList' + username));
         printList(cartList);  
         showTotalAmount(cartList);
-    } else {
-        //clearList();
     }     
-   
-    //usernameID.innerText = "Login";
-    
 }
 
+
+// funcion para borrar datos de localStorage
 function removeLocal() {
-    // borramos el contenido del local storage
-    window.localStorage.clear();
+
+    window.localStorage.removeItem('token');
+    window.localStorage.removeItem('username');  
 }
 

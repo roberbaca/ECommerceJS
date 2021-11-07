@@ -46,9 +46,7 @@ a:hover {
 .navbar-section {    
     display: flex;
     margin: 0%;
-    padding: 0%;      
-    /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); */
-    /* background-color: var(--black); */
+    padding: 0%;        
 }
   
 .menu-container {
@@ -108,7 +106,7 @@ a:hover {
 } 
 
 .siteLogo img:hover {
-    width: 6.5rem;  
+    transform: rotate(360deg);  
     transition: all 0.3s ease-in-out;       
 }  
   
@@ -281,7 +279,7 @@ a:hover {
     font-weight: 400;
 }
 
-.products-inputBox{    
+.products-inputBox {     
     padding:1rem;
     font-size: 1.7rem;
     background:var(--lightGrey);
@@ -354,7 +352,7 @@ a:hover {
     margin-bottom: 5rem;
 }
 
-.cart-title a{
+.cart-title a {
     font-size: 5rem;
     margin-right: 2rem;
     color: var(--green);
@@ -398,7 +396,7 @@ a:hover {
     width: 100%;
 }
 
-.cart-item h3{
+.cart-item h3 {
     font-size: 2.5rem;
 }
 
@@ -428,11 +426,11 @@ a:hover {
 }
 
 
-.item-img img{
+.item-img img {
     width: 10rem;
 }
 
-.trashButton{
+.trashButton {
     padding:1rem 1rem 1rem 1rem;
     font-size: 2.5rem;
     outline: none;
@@ -525,7 +523,6 @@ a:hover {
     width: 100%;
 }
 
-
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -559,9 +556,7 @@ a:hover {
     color:var(--white);
 }  
 
-
-.contact-inputBox{
-    
+.contact-inputBox {    
     padding:1rem;
     font-size: 1.7rem;
     background:var(--lightGrey);
@@ -582,7 +577,6 @@ a:hover {
     color: var(--brownish);
 }
 
-
 textarea::placeholder {
     color: var(--brownish);
 }
@@ -591,20 +585,18 @@ textarea::placeholder {
     width: 100%;
 }
 
-.contact-name input:focus{
+.contact-name input:focus {
     border-color: var(--green); 
 }
 
 
-.contact-inputMail input:focus{
+.contact-inputMail input:focus {
     border-color: var(--green);  
 }
 
 .contact-inputBox:focus {
     border-color: var(--green);  
 }
-
-
 
 .contact-inputMailBox {
     padding:1rem;
@@ -625,8 +617,6 @@ textarea::placeholder {
     width: 100%;
     border-radius: 5px;
 }
-
-
 
 .contact-mailStatus {
     color: var(--whiteSmoke);
@@ -669,7 +659,6 @@ textarea::placeholder {
     height: 100%;    
     margin: 0;     
 }
-
 
 .suscribe-btn {
     display: inline-block;    
@@ -733,12 +722,10 @@ textarea::placeholder {
     
 }
 
-.about-social a:hover{
+.about-social a:hover {
     color: var(--black);
     transition: all 0.3s ease;  
 }
-
-
 
 .about-links {
     width: 30%; 
@@ -764,7 +751,7 @@ textarea::placeholder {
     font-size: 1.7rem;  
 }
 
-.about-items a:hover{
+.about-items a:hover {
     color: var(--orange);
     transition: all 0.3s ease;  
 }
@@ -787,7 +774,7 @@ textarea::placeholder {
     transition: all 0.3s ease;    
 }
 
-.about-apps a:hover{
+.about-apps a:hover {
     color: var(--black);
     transition: all 0.3s ease;  
 }
@@ -835,7 +822,7 @@ footer a {
     transition: all 0.3s ease;   
 }
 
-footer a:hover{
+footer a:hover {
     color: var(--orange);
 }
 

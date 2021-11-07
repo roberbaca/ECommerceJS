@@ -19,22 +19,22 @@
 }
 
 html,body {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    place-items: center;
-    background-image: url(./img/flat-lay-assortment-vegetables-with-copy-space.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background-image: url(./img/flat-lay-assortment-vegetables-with-copy-space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .login-logo {
-    width: 8rem;
+  width: 8rem;
 }
 
-.form-title{
-    font-size: 2.8rem;
+.form-title {
+  font-size: 2.8rem;
 }
 
 ::selection {
@@ -65,7 +65,7 @@ html,body {
   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 
-.wrapper .slide-controls{
+.wrapper .slide-controls {
   position: relative;
   display: flex;
   height: 50px;
@@ -77,7 +77,7 @@ html,body {
   border-radius: 5px;
 }
 
-.slide-controls .slide{
+.slide-controls .slide {
   height: 100%;
   width: 100%;
   color: #fff;
@@ -90,12 +90,11 @@ html,body {
   transition: all 0.6s ease;
 }
 
-.slide-controls label.signup{
+.slide-controls label.signup {
   color: #000;
 }
 
-
-.slide-controls .slider-tab{
+.slide-controls .slider-tab {
   position: absolute;
   height: 100%;
   width: 50%;
@@ -106,55 +105,55 @@ html,body {
   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 
-input[type="radio"]{
+input[type="radio"] {
   display: none;
 }
 
-#register:checked ~ .slider-tab{
+#register:checked ~ .slider-tab {
   left: 50%;
 }
 
-#register:checked ~ label.register{
+#register:checked ~ label.register {
   color: #fff;
   cursor: default;
   user-select: none;
 }
 
-#register:checked ~ label.login{
+#register:checked ~ label.login {
   color: #000;
 }
 
-#login:checked ~ label.register{
+#login:checked ~ label.register {
   color: #000;
 }
 
-#login:checked ~ label.login{
+#login:checked ~ label.login {
   cursor: default;
   user-select: none;
 }
 
-.wrapper .form-container{
+.wrapper .form-container {
   width: 100%;
   overflow: hidden;
 }
 
-.form-container .form-inner{
+.form-container .form-inner {
   display: flex;
   width: 200%;
 }
 
-.form-container .form-inner form{
+.form-container .form-inner form {
   width: 50%;
   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 
-.form-inner form .field{
+.form-inner form .field {
   height: 50px;
   width: 100%;
   margin-top: 20px;
 }
 
-.form-inner form .field input{
+.form-inner form .field input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -167,47 +166,59 @@ input[type="radio"]{
   background:var(--lightGrey);
 }
 
-.form-inner form .field input:focus{
+.form-inner form .field input:focus {
   border-color: var(--green);  
 }
 
-.form-inner form .field input::placeholder{
+.form-inner form .field input::placeholder {
   color: var(--brownish);
   transition: all 0.3s ease;
 }
 
-form .field input:focus::placeholder{
+form .field input:focus::placeholder {
   color: var(--brownish);
 }
 
-.form-inner form .pass-link{
+.form-inner form .pass-link {
   margin-top: 15px;
-  text-align: center;
+  text-align: right;
 }
 
-.form-inner form .signup-link{
+.form-inner form .signup-link {
   text-align: center;
   margin-top: 30px;
 }
 
 .form-inner form .pass-link a,
-.form-inner form .signup-link a{
+.form-inner form .signup-link a {
   color: var(--green);
   text-decoration: none;
   transition: all 0.3s ease-in-out;  
 }
 
 .form-inner form .pass-link a:hover,
-.form-inner form .signup-link a:hover{ 
+.form-inner form .signup-link a:hover { 
   color: var(--orange);
   transition: all 0.3s ease-in-out;  
 }
 
 .register-link {
   text-align: center;
+ 
 }
 
-form .btn{
+.register-link a {
+  text-decoration: none;
+  color: var(--green);
+  transition: all 0.3s ease-in-out;  
+}
+
+.register-link a:hover { 
+  color: var(--orange);
+  transition: all 0.3s ease-in-out;  
+}
+
+form .btn {
   height: 50px;
   width: 100%;
   border-radius: 5px;
@@ -215,66 +226,111 @@ form .btn{
   overflow: hidden;
 }
 
-form .btn .btn-layer{
+form .btn .btn-layer {
   height: 100%;
   width: 300%;
   position: absolute;
   left: -100%;
   background: var(--green);
   border-radius: 5px;
-  transition: all 0.4s ease;;
+  transition: all 0.4s ease;;  
 }
 
-form .btn:hover .btn-layer{
-  left: 0;
+form .btn:hover .btn-layer {
+  left: 0; 
 }
-
 
 .field {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  padding: 0%;
 }
 
 .login-btn {
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    position: relative;
-    background: none;
-    border: none;
-    color: #fff;
-    padding-left: 0;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.4s ease;;
-    
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;    
+  background-color: var(--green);   
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s ease;;   
 }
 
 .login-btn:hover {
-    background-color: var(--black);
-    transition: all 0.4s ease;;
+  background-color: var(--black);
+  transition: all 0.4s ease;;
 }
 
-
-
 .register-btn {
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    position: relative;
-    background: none;
-    border: none;
-    color: #fff;
-    padding-left: 0;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.4s ease;;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background-color: var(--green);   
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 .register-btn:hover {
-    background-color: var(--black);
-    transition: all 0.4s ease;;
+  background-color: var(--black);
+  transition: all 0.4s ease;
+}
+
+.rememberme {
+  margin-top: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  font-size: 3.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--green);
+  transition: all 0.4s ease;
+}
+
+.social-icons a:hover {
+  color: var(--black);
+  transition: all 0.4s ease;
+}
+
+.icons-link p {
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.title a img {
+  transition: all 0.4s ease;
+}
+
+.title a img:hover {  
+  transform: rotate(360deg);
+  transition: all 0.4s ease;
+}
+
+
+/* -------------
+    Messages
+---------------*/
+
+.rounded {
+  width: 2rem;
 }
