@@ -11,7 +11,7 @@
     <img src="https://user-images.githubusercontent.com/83043304/140669718-0a350618-f217-4247-9d91-42d00c4c292f.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Fresh Market (e-commerce website</h3>
+<h3 align="center">Fresh Market (e-commerce website)</h3>
 
   <p align="center">
     Ecommerce website coded in JavaScript Vanilla.
