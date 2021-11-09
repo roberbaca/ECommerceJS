@@ -77,7 +77,7 @@ const onLogin = async (e) => {
         }
         // Email o contraseña incorrectos
         else { 
-            showErrorMessage();
+            showMessage("ErrorMessage");
         }
 
     } catch(error) {
@@ -138,19 +138,26 @@ const onRegister = async (e) => {
             });
     
             const json = await response.json();        
-            console.log(json);       
+            console.log(json);     
+            
+            // Validamos la respuesta del back
+            if (response.status === 200){ 
+                showMessage("successMessage");
+                emailInputRegister.value = "";
+                passwordInputRegister.value = "";
+                newPasswordInputRegister.value = "";
+                nameInputRegister.value = "";
+                lastNameInputRegister.value = "";
+                ageInputRegister.value = ""; 
+            }
+
+            if (response.status === 500){
+                showMessage("ErrorMessage2");
+            } 
     
         } catch(error) {
             alert("Register Error: " + error);
-        }        
-    
-        emailInputRegister.value = "";
-        passwordInputRegister.value = "";
-        newPasswordInputRegister.value = "";
-        nameInputRegister.value = "";
-        lastNameInputRegister.value = "";
-        ageInputRegister.value = "";  
-        showSuccessMessage();    
+        }                   
     }  
 }
 
@@ -166,21 +173,17 @@ const onRedirect = () => {
     Messages
 -------------*/
 
-
-const showSuccessMessage = () => {
+const showMessage = (type) => {
  
-    var toastMessage = document.getElementById('successMessage');
+    var toastMessage = document.getElementById(type);
     var toast = new bootstrap.Toast(toastMessage);    
     toast.show();    
 }
-const showErrorMessage = () => {
-  
-    var toastMessage = document.getElementById('ErrorMessage');
-    var toast = new bootstrap.Toast(toastMessage);   
-    toast.show();  
-}
 
 
+/*--------------
+    Listeners
+---------------*/
 
 
 
