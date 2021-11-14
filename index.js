@@ -217,7 +217,7 @@ const totalAmount = document.getElementById("total-items");
 const checkoutConfirmation = document.getElementById("cart-message");
 const usernameID = document.getElementById("username");
 const logoutButton = document.getElementById("logout");
-const logoutButtonHamburguer = document.getElementById("logoutHamburguer");
+const logoutButtonMobile = document.getElementById("logoutMobile");
 const filterButton = document.getElementById("select-filter");
 const inputFilter = document.getElementById("input-filter");
 const productsCardContainer = document.getElementById("products-card-container");  
@@ -431,11 +431,11 @@ function loadLocal() {
     if(localStorage.getItem('token') !== null){
         token = window.localStorage.getItem('token');
         logoutButton.addEventListener("click", logout); 
-        logoutButtonHamburguer.addEventListener("click", logout);                     
+        logoutButtonMobile.addEventListener("click", logout);                     
     }  
     else {
         logoutButton.className = "hidden";
-        logoutButtonHamburguer.className = "hidden";
+        logoutButtonMobile.className = "hidden";
     }
 
     if(localStorage.getItem('username') !== null){   

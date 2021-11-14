@@ -22,7 +22,7 @@
 
 <body>
     <!-- header section starts-->
-    <header class="navbar-section" id="home">		    
+    <header class="navbar-section" id="navBar">		    
         <div class = "logo-container">
             <a class="siteLogo" href="index.html">
                 <img src="./assets/logo/circleLogo.png" alt="siteLogo">
@@ -50,34 +50,8 @@
     </header>
     <!-- header section ends-->
 
-    <!-- hamburguer menu section starts-->
-    <!-- <div id="overlay" class = "hamburguer">
-        <a href="#">Link1</a>
-        <a href="#">Link2</a>
-        <a href="#">Link3</a>
-        <a href="#">Link4</a>
-      </div>
-      <div class="nav">
-        <div class="logo">LOGO</div>
-        <div id="hamburger">
-          <div></div>
-        </div>
-      </div> -->
-<!-- 
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <h5 class="text-white h4">Collapsed content</h5>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
-        </div>
-      </div>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </nav> -->
-    <div class = "hamburguer">
+    <!-- Mobile menu section ends-->
+    <div class = "mobile-menu">
         <div class = "logo-container">
             <a class="siteLogo" href="index.html">
               <img src="./assets/logo/circleLogo.png" alt="siteLogo">
@@ -88,23 +62,10 @@
             <a href="./login/login.html" class="fas fa-user-circle">
                 <p class = "username" id = "username">Login</p>
             </a>      
-            <button type = "submit" class = "logout" id="logoutHamburguer">Log out</button>            
+            <button type = "submit" class = "logout" id="logoutMobile">Log out</button>            
         </div>          
     </div>
-
-     <!-- hamburguer menu section ends-->
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Mobile menu section ends-->
 
 
     <!-- home section starts  -->
@@ -117,7 +78,8 @@
         </div>
 
         <div class="cover-img">
-            <img src="./assets/cover.jpg" alt="coverImage">
+            <img class = "cover-img-big" src="./assets/coverMedium.jpg" alt="coverImage">
+            <img class = "cover-img-small" src="./assets/coverSmall.jpg" alt="coverImageMobile">
         </div>     
 
     </section>
