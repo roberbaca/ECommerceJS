@@ -1952,6 +1952,14 @@ footer a:hover {
         font-size: 1.5rem;
     }
 
+    .cart-message {
+        text-align: center;
+    }
+    
+    .checkout-message h2{
+        font-size: 1rem;
+    }
+
     .item-img img {
         width: 4rem;
     }
