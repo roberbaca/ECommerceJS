@@ -23,7 +23,7 @@ html,body {
   height: 100vh;
   width: 100vw;
   place-items: center;
-  background-image: url(./img/flat-lay-assortment-vegetables-with-copy-space.jpg);
+  background-image: url("./img/loginBackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -367,7 +367,7 @@ form .btn:hover .btn-layer {
   }     
 
   .wrapper {
-    width: 25%;
+    width: 100%;
     padding: 1.5rem;
   }
     
@@ -376,16 +376,16 @@ form .btn:hover .btn-layer {
   }
       
   .wrapper .slide-controls {       
-    height: 2rem;        
+    height: 2.5rem;        
   }
       
   .slide-controls .slide {
-    font-size: 0.8rem;        
-    line-height: 2rem;        
+    font-size: 1rem;        
+    line-height: 2.5rem;        
   }           
        
   .form-inner form .field {
-    height: 2rem;       
+    height: 2.5rem;       
     margin-top: 1rem;
   }
       
@@ -403,7 +403,7 @@ form .btn:hover .btn-layer {
   }
             
   form .btn {
-    height: 50px;       
+    height: 2.5rem;       
     border-radius: 0.5rem;      
   }    
       
@@ -423,15 +423,15 @@ form .btn:hover .btn-layer {
       
   .rememberme {
     margin-top: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }    
       
   .pass-link a {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .social-icons a {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     padding: 0.5rem;
     margin-bottom: 0.2rem;        
   }      
@@ -439,15 +439,15 @@ form .btn:hover .btn-layer {
   .icons-link p {    
     margin-top: 0.2rem;
     margin-bottom: 0.1rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .register-link {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .register-link a {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }    
   
 }
@@ -559,7 +559,108 @@ form .btn:hover .btn-layer {
 
 /* Pantallas medianas (tablets de menos de 992px) */
 @media (max-width: 992px) { 
+  html {
+    height: 100%;
+  }
 
+  body {
+    height: 100%;   
+    overflow: hidden;  
+  }  
+    
+  .login-logo {
+    width: 5rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .form-title {
+    font-size: 1.7rem;
+    margin-top: 0.2rem;
+  }     
+
+  .wrapper {
+    width: 45%;
+    padding: 1.2rem;
+  }
+
+  .wrapper .title {      
+    font-size: 1rem;       
+  }
+  
+  .wrapper .slide-controls {       
+    height: 2rem;        
+  }
+  
+  .slide-controls .slide {
+    font-size: 0.8rem;        
+    line-height: 2rem;        
+  }           
+   
+  .form-inner form .field {
+    height: 2rem;       
+    margin-top: 1rem;
+  }
+  
+  .form-inner form .field input {    
+    border-bottom-width: 2px;
+    font-size: 1rem;     
+  }       
+
+  .form-inner form .pass-link {
+    margin-top: 15px;      
+  }
+  
+  .form-inner form .signup-link {       
+    margin-top: 30px;
+  }
+        
+  form .btn {
+    height: 50px;       
+    border-radius: 0.5rem;      
+  }    
+  
+  .field {
+    margin-bottom: 1rem;        
+  }
+  
+  .login-btn {        
+    border-radius: 0.5rem;
+    font-size: 1rem;        
+  }          
+  
+  .register-btn {       
+    border-radius: 0.5rem;
+    font-size: 1rem;       
+  }    
+  
+  .rememberme {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }    
+  
+  .pass-link a {
+    font-size: 0.8rem;
+  }
+
+  .social-icons a {
+    font-size: 2.2rem;
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;        
+  }      
+
+  .icons-link p {    
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.8rem;
+  }
+
+  .register-link {
+    font-size: 0.8rem;
+  }
+
+  .register-link a {
+    font-size: 0.8rem;
+  }
 } 
 
 /* Pantallas pequeñas (móviles en landscape de menos de 768px) */
@@ -692,6 +793,7 @@ form .btn:hover .btn-layer {
   .wrapper {
     width: 80%;
     padding: 1.2rem;
+    margin: 0;
   }
 
   .wrapper .title {      

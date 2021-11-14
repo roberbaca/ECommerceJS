@@ -216,6 +216,7 @@ const list = document.getElementById("cart-list");
 const totalAmount = document.getElementById("total-items");
 const checkoutConfirmation = document.getElementById("cart-message");
 const usernameID = document.getElementById("username");
+const usernameIDMobile = document.getElementById("usernameMobile");
 const logoutButton = document.getElementById("logout");
 const logoutButtonMobile = document.getElementById("logoutMobile");
 const filterButton = document.getElementById("select-filter");
@@ -440,7 +441,8 @@ function loadLocal() {
 
     if(localStorage.getItem('username') !== null){   
         username =  window.localStorage.getItem("username");  
-        usernameID.innerText = username;            
+        usernameID.innerText = username;
+        usernameIDMobile.innerText = username;      
     }    
 
     if(localStorage.getItem('cartList' + username) !== null && token !== null ){
