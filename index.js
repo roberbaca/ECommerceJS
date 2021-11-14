@@ -217,6 +217,7 @@ const totalAmount = document.getElementById("total-items");
 const checkoutConfirmation = document.getElementById("cart-message");
 const usernameID = document.getElementById("username");
 const logoutButton = document.getElementById("logout");
+const logoutButtonHamburguer = document.getElementById("logoutHamburguer");
 const filterButton = document.getElementById("select-filter");
 const inputFilter = document.getElementById("input-filter");
 const productsCardContainer = document.getElementById("products-card-container");  
@@ -228,8 +229,6 @@ document.addEventListener("click", removeFromCart);
 filterButton.addEventListener("change", filterProductsList);
 inputFilter.addEventListener("Keyup change", searchProducts);
 checkoutButton.addEventListener("click", proceedToCheckout);
-logoutButton.addEventListener("click", logout);
-
 
 
 /*-----------------
@@ -430,8 +429,14 @@ function loadLocal() {
     
 
     if(localStorage.getItem('token') !== null){
-        token = window.localStorage.getItem('token');               
+        token = window.localStorage.getItem('token');
+        logoutButton.addEventListener("click", logout); 
+        logoutButtonHamburguer.addEventListener("click", logout);                     
     }  
+    else {
+        logoutButton.className = "hidden";
+        logoutButtonHamburguer.className = "hidden";
+    }
 
     if(localStorage.getItem('username') !== null){   
         username =  window.localStorage.getItem("username");  
@@ -464,8 +469,6 @@ const showMessage = (type) => {
     var toast = new bootstrap.Toast(toastMessage);    
     toast.show();    
 }
-
-
 
 
 // Renderizamos en el DOM el listado general de productos

@@ -22,8 +22,7 @@
 
 <body>
     <!-- header section starts-->
-    <header class="navbar-section" id="home">
-		    
+    <header class="navbar-section" id="home">		    
         <div class = "logo-container">
             <a class="siteLogo" href="index.html">
                 <img src="./assets/logo/circleLogo.png" alt="siteLogo">
@@ -35,7 +34,7 @@
                 <ul class= "menu-list">
                     <li><a class="menu-items" href="#home">Home</a></li>            
                     <li><a class="menu-items" href="#products">Products</a></li>     
-                    <li><a class="menu-items" href="#about">About Us</a></li>
+                    <li><a class="menu-items" href="#about">About</a></li>
                     <li><a class="menu-items" href="#contact">Contact</a></li>             
                 </ul>
             </nav>
@@ -45,12 +44,68 @@
             <a href="#cart" class="fas fa-shopping-cart"></a>     
             <a href="./login/login.html" class="fas fa-user-circle">
                 <p class = "username" id = "username">Login</p>
-            </a>            
-            <p class = "logout" id = "logout">Log out</p>
-        </div>
-    	
+            </a>      
+            <button type = "submit" class = "logout" id="logout">Log out</button>            
+        </div>    	
     </header>
     <!-- header section ends-->
+
+    <!-- hamburguer menu section starts-->
+    <!-- <div id="overlay" class = "hamburguer">
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+        <a href="#">Link4</a>
+      </div>
+      <div class="nav">
+        <div class="logo">LOGO</div>
+        <div id="hamburger">
+          <div></div>
+        </div>
+      </div> -->
+<!-- 
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4">Collapsed content</h5>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav> -->
+    <div class = "hamburguer">
+        <div class = "logo-container">
+            <a class="siteLogo" href="index.html">
+              <img src="./assets/logo/circleLogo.png" alt="siteLogo">
+            </a>
+        </div>  
+        <div class="icons">
+            <a href="#cart" class="fas fa-shopping-cart"></a>     
+            <a href="./login/login.html" class="fas fa-user-circle">
+                <p class = "username" id = "username">Login</p>
+            </a>      
+            <button type = "submit" class = "logout" id="logoutHamburguer">Log out</button>            
+        </div>          
+    </div>
+
+     <!-- hamburguer menu section ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- home section starts  -->
     <section class="home" id="home">
@@ -176,14 +231,16 @@
 
    <!--about section starts -->
     <section class = "about" id = "about"> 
-    <div class = "about">
+    <div class = "about-container">
         <div class  = "about-social">
             <h3>Fresh Market</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, debitis. Quis dolores doloribus, corrupti optio laboriosam cumque repellat quam eos molestias quae quibusdam mollitia obcaecati rerum, placeat impedit sint eligendi?</p>
-            <a class = "socialIcon" target="_blank" href=""><i class="fab fa-facebook-square"></i></a>
-            <a class = "socialIcon" target="_blank" href=""><i class="fab fa-instagram-square"></i></a>
-            <a class = "socialIcon" target="_blank" href=""><i class="fab fa-twitter-square"></i></a>
-            <a class = "socialIcon" target="_blank" href=""><i class="fab fa-youtube-square"></i></a>
+            <div class = "social-icon-container">
+                <a class = "socialIcon" target="_blank" href=""><i class="fab fa-facebook-square"></i></a>
+                <a class = "socialIcon" target="_blank" href=""><i class="fab fa-instagram-square"></i></a>
+                <a class = "socialIcon" target="_blank" href=""><i class="fab fa-twitter-square"></i></a>
+                <a class = "socialIcon" target="_blank" href=""><i class="fab fa-youtube-square"></i></a>
+            </div>
         </div>
 
         <div class  = "about-links">
@@ -197,8 +254,10 @@
 
         <div class  = "about-apps">
             <h3>Get the App</h3>
-            <a class = "socialIcon" target="_blank" href=""><i class="fab fa-google-play"></i></a>
-            <a class = "socialIcon" target="_blank" href=""><i class="fab fa-apple"></i></a>
+            <div class = "social-icon-container">
+                <a class = "socialIcon" target="_blank" href=""><i class="fab fa-google-play"></i></a>
+                <a class = "socialIcon" target="_blank" href=""><i class="fab fa-apple"></i></a>
+            </div>
         </div> 
     </div>
     </section>
