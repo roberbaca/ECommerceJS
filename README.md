@@ -27,7 +27,7 @@
 
 Here’s some screenshots which demonstrates the functionality of the website I created:
 
-![image](https://user-images.githubusercontent.com/83043304/141706223-c39a955d-c1d7-454d-82fe-42d404b14cff.png)
+![image](https://user-images.githubusercontent.com/83043304/141706488-949127bc-12cc-45e2-ada7-5f4314fc884f.png)
 
 ![image](https://user-images.githubusercontent.com/83043304/141706325-b3ebbb7a-a604-49e2-9eca-c5ed222ba086.png)
 
