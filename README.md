@@ -25,14 +25,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here’s some screenshots which demonstrates the functionality of the website I created:
-
-
-
-
-
-
-
 This project is an online store that sells organic products like veggies and fruits. It’s a simple e-commerce website made with JavaScript Vanilla.
 
 The user may add and remove products from their shopping cart, update the cart, change the quantity of each product, and empty the cart. 
@@ -41,9 +33,15 @@ Once the shop cart is ready, the user may proceed to checkout. In order to be ab
 
 The website also allows to store user data without using a server, for example, the shopping cart list.
 
+Here’s some screenshots which demonstrates the functionality of the website I created:
+
+![image](https://user-images.githubusercontent.com/83043304/141706488-949127bc-12cc-45e2-ada7-5f4314fc884f.png)
+
+![image](https://user-images.githubusercontent.com/83043304/141706325-b3ebbb7a-a604-49e2-9eca-c5ed222ba086.png)
+
+![image](https://user-images.githubusercontent.com/83043304/141706331-9bf68260-461e-4a0e-afaf-3b95d9e11480.png)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
