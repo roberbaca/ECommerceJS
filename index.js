@@ -396,8 +396,7 @@ function proceedToCheckout() {
         checkoutConfirmation.innerText = "Your purchase was succesful !";
     }
 
-    if (token == null){
-        //alert("Please login with your account");
+    if (token == null){        
         showMessage("AccountError");
     }
 }

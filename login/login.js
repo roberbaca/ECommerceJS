@@ -141,7 +141,7 @@ const onRegister = async (e) => {
             console.log(json);     
             
             // Validamos la respuesta del back
-            if (response.status === 200){ 
+            if (response.status != 500){ 
                 showMessage("successMessage");
                 emailInputRegister.value = "";
                 passwordInputRegister.value = "";
@@ -149,10 +149,18 @@ const onRegister = async (e) => {
                 nameInputRegister.value = "";
                 lastNameInputRegister.value = "";
                 ageInputRegister.value = ""; 
+                console.log("registracion exitosa");
             }
 
-            if (response.status === 500){
+            else if (response.status === 500){
                 showMessage("ErrorMessage2");
+                emailInputRegister.value = "";
+                passwordInputRegister.value = "";
+                newPasswordInputRegister.value = "";
+                nameInputRegister.value = "";
+                lastNameInputRegister.value = "";
+                ageInputRegister.value = ""; 
+                console.log("algo salio mal");
             } 
     
         } catch(error) {
@@ -184,8 +192,6 @@ const showMessage = (type) => {
 /*--------------
     Listeners
 ---------------*/
-
-
 
 loginBtn.addEventListener("click", onLogin);
 registerBtn.addEventListener("click", onRegister);

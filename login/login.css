@@ -339,16 +339,6 @@ form .btn:hover .btn-layer {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* ----------------
     Media Queries
 ------------------*/
@@ -460,7 +450,7 @@ form .btn:hover .btn-layer {
       max-height: 100vh;
       max-width: 100vw;
       overflow: hidden;  
-    } 
+  } 
     
   .login-logo {
     width: 5rem;

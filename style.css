@@ -18,8 +18,6 @@
     text-decoration: none;   
 }
 
-
-
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -177,6 +175,7 @@ a:hover {
 .logout {
     width: 10rem;
     text-align: center;
+    margin-left: 2rem;
 }
 
 
@@ -967,8 +966,7 @@ footer a:hover {
 
     .cover-content h2 {
         font-size: 6rem; 
-    }
-   
+    }  
     
 }
 
@@ -1050,7 +1048,7 @@ footer a:hover {
         align-items: center;
     }
       
-     .menu-items {     
+    .menu-items {     
         margin-right: 3rem;
     }         
     
@@ -1081,6 +1079,7 @@ footer a:hover {
     .cart-container { 
         width: 80%;    
     } 
+
     .contact-container {
         width: 80%;       
     }
@@ -1139,6 +1138,7 @@ footer a:hover {
     .search-box i {
         font-size: 2rem;
     }
+
     .cart-container {    
         width: 95%;
     } 
@@ -1248,6 +1248,7 @@ footer a:hover {
 
 /* Pantallas pequeñas (móviles en landscape de menos de 768px) */
 @media (max-width: 768px) { 
+
     .cover-content h3 {
         font-size: 2.8rem;  
     }
@@ -1632,8 +1633,7 @@ footer a:hover {
     .trashButton {
         padding:0.6rem 0.6rem 0.6rem 0.6rem;
         font-size: 2rem;  
-    }
-    
+    }    
 
     .total-items {
         margin-top: 0.8rem;
@@ -1955,7 +1955,7 @@ footer a:hover {
     .cart-message {
         text-align: center;
     }
-    
+
     .checkout-message h2{
         font-size: 1rem;
     }
