@@ -27,10 +27,11 @@
 
 Here’s some screenshots which demonstrates the functionality of the website I created:
 
+![image](https://user-images.githubusercontent.com/83043304/141706223-c39a955d-c1d7-454d-82fe-42d404b14cff.png)
 
+![image](https://user-images.githubusercontent.com/83043304/141706325-b3ebbb7a-a604-49e2-9eca-c5ed222ba086.png)
 
-
-
+![image](https://user-images.githubusercontent.com/83043304/141706331-9bf68260-461e-4a0e-afaf-3b95d9e11480.png)
 
 
 This project is an online store that sells organic products like veggies and fruits. It’s a simple e-commerce website made with JavaScript Vanilla.
